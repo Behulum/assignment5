@@ -3,7 +3,10 @@ package main;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.SQLOutput;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Assignment5 {
 
@@ -30,6 +33,21 @@ public class Assignment5 {
 	}
 
 	private static void uniqueNames() {
+		Scanner scanner = new Scanner(System.in);
+		HashSet<String> nameSet = new HashSet<>();
+		String name;
+
+		do {
+			System.out.print("Enter name: ");
+			name = scanner.nextLine();
+			nameSet.add(name);
+		}while(!name.isBlank());
+
+		System.out.println("Unique name list contains: ");
+		for(String printName: nameSet){
+			System.out.println(printName);
+		}
+
 	}
 
 	private static void drawHistogram() {
